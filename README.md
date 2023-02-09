@@ -14,7 +14,9 @@ Python 3.10 Django 3.2.16
 
 Затем активируйте `venv` командой `source venv/*/activate`, где `*` у `Windows`: `scripts`, а у `linux/osx`: `bin`
 
-Установите зависимости из файла requirements.txt:  `pip install -r requirements.txt`
+Установите зависимости  `pip install -r *`, где `*` - файл. `requirements_dev` - для разаботки, `requirements_lint` - линтинг, `requirements_test` - тестирование
+
+Создайте файл `.env` и впишите `SECRET_KEY="*"`, где `*` - ваш ключ
 
 Затем для запуска сервера выполните команду `cd lyceum` и `python3 manage.py runserver` для запуска сервера. Затем вернитесь в корневую папку проекта используя команду `cd ..`.
 
