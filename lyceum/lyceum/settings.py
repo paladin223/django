@@ -13,25 +13,36 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 from pathlib import Path
 
-from dotenv import find_dotenv, load_dotenv
+from dotenv import find_dotenv
+from dotenv import load_dotenv
+import environ
 
 # .env download
 load_dotenv(find_dotenv())
+env = environ.Env(
+    # Set casting, default value
+    DEBUG=(bool, True),
+    SECRET_KEY=(str, "django-key-key"),
+    ALLOWED_HOSTS=(list, ["127.0.0.1"]),
+)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+environ.Env.read_env(BASE_DIR / ".env")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv("SECRET_KEY")
+SECRET_KEY = env("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DEBUG")
+DEBUG = env("DEBUG")
+if os.getenv("DEBUG") in ["False", "0"]:
+    DEBUG = False
 
-ALLOWED_HOSTS = [os.getenv("ALLOWED_HOSTS")]
+ALLOWED_HOSTS = env("ALLOWED_HOSTS")
 
 
 # Application definition
