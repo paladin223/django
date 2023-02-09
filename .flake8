@@ -1,0 +1,4 @@
+[flake8]
+ignore = F401
+import-order-style = google
+inline-quotes = "double"

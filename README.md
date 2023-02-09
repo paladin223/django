@@ -18,6 +18,8 @@ Python 3.10 Django 3.2.16
 
 Создайте файл `.env` и впишите `SECRET_KEY="*"`, где `*` - ваш ключ
 
-Затем для запуска сервера выполните команду `cd lyceum` и `python3 manage.py runserver` для запуска сервера. Затем вернитесь в корневую папку проекта используя команду `cd ..`.
+Для запуска сервера выполните команду `cd lyceum` и `python3 manage.py runserver` для запуска сервера. 
+
+Затем вернитесь в корневую папку проекта используя команду `cd ..`.
 
 [![Python package](https://github.com/paladin223/django/actions/workflows/python-package.yml/badge.svg)](https://github.com/paladin223/django/actions/workflows/python-package.yml)
