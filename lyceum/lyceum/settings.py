@@ -42,7 +42,7 @@ DEBUG = env("DEBUG")
 if os.getenv("DEBUG") in ["False", "0"]:
     DEBUG = False
 
-ALLOWED_HOSTS = env("ALLOWED_HOSTS")
+ALLOWED_HOSTS = env("ALLOWED_HOSTS")[0].split(",")
 
 
 # Application definition
