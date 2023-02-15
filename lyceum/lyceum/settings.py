@@ -51,6 +51,13 @@ ALLOWED_HOSTS = env("ALLOWED_HOSTS")
 ALLOWED_HOSTS.extend(ALLOWED_HOSTS.pop().split(","))
 
 
+def show_toolbar(request):
+    return True
+
+
+SHOW_TOOLBAR_CALLBACK = show_toolbar
+
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -77,7 +84,7 @@ MIDDLEWARE = [
     "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
-INTERNAL_IPS = ["127.0.0.1"]
+INTERNAL_IPS = ["127.0.0.1", ]
 
 ROOT_URLCONF = "lyceum.urls"
 
