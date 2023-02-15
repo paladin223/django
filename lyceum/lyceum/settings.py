@@ -39,7 +39,12 @@ SECRET_KEY = env("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env("DEBUG")
-if os.getenv("DEBUG").lower() in ["False", "0"]:
+if isinstance(os.getenv("DEBUG"), str) and os.getenv("DEBUG").lower() in [
+    "false",
+    "0",
+    "no",
+    "n",
+]:
     DEBUG = False
 
 ALLOWED_HOSTS = env("ALLOWED_HOSTS")
