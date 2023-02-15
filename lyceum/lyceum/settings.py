@@ -39,7 +39,7 @@ SECRET_KEY = env("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env("DEBUG")
-if os.getenv("DEBUG") in ["False", "0"]:
+if os.getenv("DEBUG").lower() in ["False", "0"]:
     DEBUG = False
 
 ALLOWED_HOSTS = env("ALLOWED_HOSTS")
@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     "about.apps.AboutConfig",
     "catalog.apps.CatalogConfig",
     "homepage.apps.HomepageConfig",
+    "debug_toolbar",
 ]
 
 MIDDLEWARE = [
@@ -68,7 +69,10 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
+
+INTERNAL_IPS = ["127.0.0.1"]
 
 ROOT_URLCONF = "lyceum.urls"
 
