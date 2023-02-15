@@ -1,6 +1,8 @@
 # django
 [![Python Linting](https://github.com/paladin223/django/actions/workflows/python-package.yml/badge.svg)](https://github.com/paladin223/django/actions/workflows/python-package.yml)
 
+[![Django tests](https://github.com/paladin223/django/actions/workflows/django.yml/badge.svg)](https://github.com/paladin223/django/actions/workflows/django.yml)
+
 # Описание
 Создание первого приложения на джанго и CI/CD
 
