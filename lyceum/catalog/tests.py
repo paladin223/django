@@ -10,9 +10,9 @@ class StaticURLTests(TestCase):
         self.assertEqual(response.status_code, HTTPStatus.OK)
 
     def test_catalog_int(self):
-        response = Client().get("/catalog/1")
+        response = Client().get("/catalog/1/")
         self.assertEqual(response.status_code, HTTPStatus.OK)
 
     def test_catalog_str(self):
-        response = Client().get("/catalog/ooo")
+        response = Client().get("/catalog/ooo/")
         self.assertNotEqual(response.status_code, HTTPStatus.OK)
