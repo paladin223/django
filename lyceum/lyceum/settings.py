@@ -17,6 +17,18 @@ from dotenv import find_dotenv
 from dotenv import load_dotenv
 import environ
 
+
+def debug_value_check(val):
+    if isinstance(val, str) and val.lower() in (
+        "false",
+        "0",
+        "no",
+        "n",
+    ):
+        return True
+    return False
+
+
 # .env download
 load_dotenv(find_dotenv())
 env = environ.Env(
@@ -39,12 +51,7 @@ SECRET_KEY = env("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env("DEBUG")
-if isinstance(os.getenv("DEBUG"), str) and os.getenv("DEBUG").lower() in [
-    "false",
-    "0",
-    "no",
-    "n",
-]:
+if debug_value_check(os.getenv("DEBUG")):
     DEBUG = False
 
 ALLOWED_HOSTS = env("ALLOWED_HOSTS")
