@@ -2,6 +2,7 @@ from http import HTTPStatus
 
 from django.test import Client
 from django.test import TestCase
+import unittest
 
 
 class StaticURLTests(TestCase):
@@ -15,10 +16,16 @@ class StaticURLTests(TestCase):
         self.assertEqual(response.status_code, HTTPStatus.OK)
 
     def test_catalog_str(self):
-        response = Client().get("/catalog/ooo")
-        self.assertNotEqual(response.status_code, HTTPStatus.OK)
+        response = Client().get("/catalog/ooo/")
+        self.assertEqual(response.status_code, HTTPStatus.NOT_FOUND)
 
     # re_path test
+    def test_catalog_re_nums_bad(self):
+        for i in ("-1", "0.1", "010"):
+            response = Client().get(f"/catalog/re/{i}/")
+            with self.subTest(response=response):
+                self.assertEqual(response.status_code, HTTPStatus.NOT_FOUND)
+
     def test_catalog_re_int(self):
         response = Client().get("/catalog/re/1/")
         self.assertEqual(response.status_code, HTTPStatus.OK)
@@ -27,20 +34,12 @@ class StaticURLTests(TestCase):
         response = Client().get("/catalog/re/123/")
         self.assertEqual(response.status_code, HTTPStatus.OK)
 
-    def test_catalog_re_multi_negative(self):
-        response = Client().get("/catalog/re/-1/")
-        self.assertNotEqual(response.status_code, HTTPStatus.OK)
-
     def test_catalog_re_str(self):
         response = Client().get("/catalog/re/falcon/")
         self.assertNotEqual(response.status_code, HTTPStatus.OK)
 
     def test_catalog_re_spec(self):
         response = Client().get("/catalog/re/1$/")
-        self.assertNotEqual(response.status_code, HTTPStatus.OK)
-
-    def test_catalog_re_float(self):
-        response = Client().get("/catalog/re/0.1/")
         self.assertNotEqual(response.status_code, HTTPStatus.OK)
 
     # regular expression test
