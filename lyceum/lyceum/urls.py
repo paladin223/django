@@ -4,10 +4,10 @@ from django.urls import include
 from django.urls import path
 
 urlpatterns = [
-    path("", include("homepage.urls")),
-    path("about/", include("about.urls")),
-    path("catalog/", include("catalog.urls")),
-    path("admin/", admin.site.urls),
+    path("", include("homepage.urls"), name="main page"),
+    path("about/", include("about.urls"), name="aboгte"),
+    path("catalog/", include("catalog.urls"), name="catalog"),
+    path("admin/", admin.site.urls, name="admin"),
 ]
 
 if settings.DEBUG:
