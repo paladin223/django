@@ -29,8 +29,9 @@ jobs:
         python -m pip install --upgrade pip
         python -m pip install -r requirements_dev.txt
         python -m pip install -r requirements_test.txt
-    - name: Lint with flake8 and black
+    - name: Lint with flake8
       run: |
-        # stop the build if there are Python syntax errors or undefined names
-        black --config pyproject.toml . --check
         flake8 --config .flake8 --count --show-source --statistics .
+    - name: Lint with black
+      run: |
+        black --config pyproject.toml . --check
