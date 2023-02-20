@@ -7,5 +7,5 @@ def home(request):
     return HttpResponse("<body>Главная</body>")
 
 
-def permission_denied_coffee(request):
+def coffee_status(request):
     return HttpResponse("<body>Я чайник</body>", status=HTTPStatus.IM_A_TEAPOT)
