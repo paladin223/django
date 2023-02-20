@@ -1,4 +1,4 @@
-class reg_check:
+class Convcheck:
     regex = r"[1-9][0-9]*"
 
     def to_python(self, value):

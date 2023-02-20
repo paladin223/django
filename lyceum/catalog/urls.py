@@ -5,7 +5,7 @@ from django.urls import register_converter
 from . import converters
 from . import views
 
-register_converter(converters.reg_check, "int_val")
+register_converter(converters.RegCheck, "int_val")
 
 
 urlpatterns = [
