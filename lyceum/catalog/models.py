@@ -1,3 +1,18 @@
-from django.db import models
+import django.db
 
-# Create your models here.
+
+class AbstractModel(django.db.models.Model):
+    class Meta:
+        abstract = True
+
+
+class CatalogCategory(AbstractModel):
+    pass
+
+
+class CatalogItem(AbstractModel):
+    pass
+
+
+class CatalogTag(AbstractModel):
+    pass
