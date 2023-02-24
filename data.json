@@ -1,0 +1,133 @@
+[
+{
+  "model": "catalog.catalogcategory",
+  "pk": 1,
+  "fields": {
+    "is_published": true,
+    "name": "Мясные изделия",
+    "slug": "myaco-kolbas",
+    "weight": 15
+  }
+},
+{
+  "model": "catalog.catalogcategory",
+  "pk": 2,
+  "fields": {
+    "is_published": true,
+    "name": "Молочные изделия",
+    "slug": "moloko-kefir",
+    "weight": 2
+  }
+},
+{
+  "model": "catalog.catalogtag",
+  "pk": 1,
+  "fields": {
+    "is_published": true,
+    "name": "закуска",
+    "slug": "aaaa"
+  }
+},
+{
+  "model": "catalog.catalogtag",
+  "pk": 2,
+  "fields": {
+    "is_published": true,
+    "name": "домашний уют",
+    "slug": "bbbb"
+  }
+},
+{
+  "model": "catalog.catalogtag",
+  "pk": 3,
+  "fields": {
+    "is_published": true,
+    "name": "все для дома",
+    "slug": "cccc"
+  }
+},
+{
+  "model": "catalog.catalogtag",
+  "pk": 4,
+  "fields": {
+    "is_published": true,
+    "name": "быстрое приготовление",
+    "slug": "dddd"
+  }
+},
+{
+  "model": "catalog.catalogtag",
+  "pk": 5,
+  "fields": {
+    "is_published": true,
+    "name": "премиум класс",
+    "slug": "eeee"
+  }
+},
+{
+  "model": "catalog.catalogitem",
+  "pk": 1,
+  "fields": {
+    "is_published": true,
+    "name": "колбаса",
+    "text": "колбаса севелат превосходно вписывается в бутерброд",
+    "category": 2,
+    "tags": []
+  }
+},
+{
+  "model": "catalog.catalogitem",
+  "pk": 2,
+  "fields": {
+    "is_published": true,
+    "name": "молочный коктейль",
+    "text": "напиток из молока превосходно подходит для жаркого дня",
+    "category": 2,
+    "tags": [
+      2
+    ]
+  }
+},
+{
+  "model": "catalog.catalogitem",
+  "pk": 3,
+  "fields": {
+    "is_published": true,
+    "name": "сыр",
+    "text": "превосходно вписывается в бутерброд",
+    "category": 2,
+    "tags": [
+      3,
+      4,
+      5
+    ]
+  }
+},
+{
+  "model": "catalog.catalogitem",
+  "pk": 4,
+  "fields": {
+    "is_published": true,
+    "name": "мясо единорога",
+    "text": "жить роскошно не запретишь",
+    "category": 2,
+    "tags": [
+      5
+    ]
+  }
+},
+{
+  "model": "catalog.catalogitem",
+  "pk": 5,
+  "fields": {
+    "is_published": true,
+    "name": "сыворотка",
+    "text": "превосходно вписывается в окрошку",
+    "category": 2,
+    "tags": [
+      1,
+      3
+    ]
+  }
+}
+]
