@@ -63,15 +63,14 @@ class CatalogCategory(core.models.AbstractModel):
         validators=[slug_validator],
         unique=True,
     )
-    weight = django.db.models.BigIntegerField("Вес", default=100,
-                                              validators=[weight_validator])
+    weight = django.db.models.BigIntegerField(
+        "Вес", 
+        default=100,
+        validators=[weight_validator])
 
     class Meta:
         verbose_name = "Категория"
         verbose_name_plural = "Категории"
-
-    def __str__(self):
-        return self.name[:200]
 
 
 # Tag
@@ -88,18 +87,19 @@ class CatalogTag(core.models.AbstractModel):
         verbose_name = "Тег"
         verbose_name_plural = "Теги"
 
-    def __str__(self):
-        return self.name[:200]
-
 
 # Items
 class CatalogItem(core.models.AbstractModel):
     text = django.db.models.TextField(
-        "Описание", default="", validators=[text_validator("роскошно", "превосходно")]
+        "Описание",
+        default="", 
+        validators=[text_validator("роскошно", "превосходно")]
     )
 
     tags = django.db.models.ManyToManyField(
-        CatalogTag, verbose_name="тег", related_name="items"
+        CatalogTag,
+        verbose_name="тег", 
+        related_name="items"
     )
 
     category = django.db.models.ForeignKey(
@@ -113,6 +113,3 @@ class CatalogItem(core.models.AbstractModel):
     class Meta:
         verbose_name = "Товар"
         verbose_name_plural = "Товары"
-
-    def __str__(self):
-        return self.name[:200]
