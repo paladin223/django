@@ -13,30 +13,11 @@ def text_validator(value):
         )
 
 
-# @deconstructible
-# class text_validator:
-#     def __init__(self, *kwargs):
-#         self.words = kwargs
-    
-#     def __call__(self, value):
-#         for value in self.words:
-#             if value in self.words:
-#                 return True
-    
-#         raise django.core.exceptions.ValidationError(
-#             "В тексте должно быть `роскошно` или `превосходно`")
-
-
 # Category
-class Category(core.models.AbstractModelCatalog):
-    slug = django.db.models.CharField(
-        "Ссылка",
-        default="",
-        max_length=150,
-        validators=[validators.validate_unicode_slug,
-                    validators.MaxLengthValidator(200)],
-        unique=True,
-    )
+class Category(core.models.AbstractSlug,
+               core.models.AbstractIsPublished,
+               core.models.AbstractName,
+               core.models.AbstractStr):
     weight = django.db.models.BigIntegerField(
         "Вес",
         default=100,
@@ -46,32 +27,23 @@ class Category(core.models.AbstractModelCatalog):
     class Meta:
         verbose_name = "Категория"
         verbose_name_plural = "Категории"
-    
-    def __str__(self):
-        return self.name
 
 
 # Tag
-class Tag(core.models.AbstractModelCatalog):
-    slug = django.db.models.CharField(
-        "Ссылка",
-        default="",
-        max_length=150,
-        validators=[validators.validate_unicode_slug,
-                    validators.MaxLengthValidator(200)],
-        unique=True,
-    )
+class Tag(core.models.AbstractSlug,
+          core.models.AbstractIsPublished,
+          core.models.AbstractName,
+          core.models.AbstractStr):
 
     class Meta:
         verbose_name = "Тег"
         verbose_name_plural = "Теги"
 
-    def __str__(self):
-        return self.name
-
 
 # Items
-class Item(core.models.AbstractModelCatalog):
+class Item(core.models.AbstractIsPublished,
+           core.models.AbstractName,
+           core.models.AbstractStr):
     category = django.db.models.ForeignKey(
         "Category",
         on_delete=django.db.models.CASCADE,
@@ -95,6 +67,3 @@ class Item(core.models.AbstractModelCatalog):
     class Meta:
         verbose_name = "Товар"
         verbose_name_plural = "Товары"
-    
-    def __str__(self):
-        return self.name
