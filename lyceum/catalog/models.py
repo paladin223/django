@@ -1,8 +1,10 @@
 import core.models
 
 import django.core.exceptions
+from django.core import validators
 import django.db
 import django.db.models
+from django.utils.deconstruct import deconstructible
 
 
 def text_validator(value):
@@ -10,6 +12,20 @@ def text_validator(value):
         raise django.core.exceptions.ValidationError(
             "В тексте должно быть `роскошно` или `превосходно`"
         )
+
+
+# @deconstructible
+# class text_validator:
+#     def __init__(self, *kwargs):
+#         self.words = kwargs
+    
+#     def __call__(self, value):
+#         for value in self.words:
+#             if value in self.words:
+#                 return True
+    
+#         raise django.core.exceptions.ValidationError(
+#             "В тексте должно быть `роскошно` или `превосходно`")
 
 
 def slug_validator(value):
@@ -47,9 +63,8 @@ class CatalogCategory(core.models.AbstractModel):
         validators=[slug_validator],
         unique=True,
     )
-    weight = django.db.models.BigIntegerField(
-        "Вес", default=100, validators=[weight_validator]
-    )
+    weight = django.db.models.BigIntegerField("Вес", default=100,
+                                              validators=[weight_validator])
 
     class Meta:
         verbose_name = "Категория"
@@ -80,7 +95,7 @@ class CatalogTag(core.models.AbstractModel):
 # Items
 class CatalogItem(core.models.AbstractModel):
     text = django.db.models.TextField(
-        "Описание", default="", validators=[text_validator]
+        "Описание", default="", validators=[text_validator("роскошно", "превосходно")]
     )
 
     tags = django.db.models.ManyToManyField(
