@@ -27,45 +27,21 @@ def text_validator(value):
 #             "В тексте должно быть `роскошно` или `превосходно`")
 
 
-def slug_validator(value):
-    # len validator
-    if len(value) > 200:
-        raise django.core.exceptions.ValidationError("Максимальная длина 200!")
-
-    # text validator
-    verbs = ""
-
-    verbs = "".join([chr(i) for i in range(ord("a"), ord("a") + 26)])  # a-z
-    verbs += "".join([str(i) for i in range(10)])  # 0 - 9
-    verbs += "-_"  # -_
-    verbs = set(verbs)
-    if len(set(value).difference(verbs)) > 0:
-        raise django.core.exceptions.ValidationError(
-            "В тексте должны быть только цифры,"
-            "буквы латиницы и символы - и _"
-        )
-
-
-def weight_validator(value):
-    if not (value in range(0, 32768)):
-        raise django.core.exceptions.ValidationError(
-            "Число в промежтке от" "(0 - 32767)!"
-        )
-
-
 # Category
 class Category(core.models.AbstractModelCatalog):
     slug = django.db.models.CharField(
         "Ссылка",
         default="",
         max_length=150,
-        validators=[slug_validator],
+        validators=[validators.validate_unicode_slug,
+                    validators.MaxLengthValidator(200)],
         unique=True,
     )
     weight = django.db.models.BigIntegerField(
         "Вес",
         default=100,
-        validators=[weight_validator])
+        validators=[validators.MaxValueValidator(32767), 
+                    validators.MinValueValidator(0)])
 
     class Meta:
         verbose_name = "Категория"
@@ -81,7 +57,8 @@ class Tag(core.models.AbstractModelCatalog):
         "Ссылка",
         default="",
         max_length=150,
-        validators=[slug_validator],
+        validators=[validators.validate_unicode_slug,
+                    validators.MaxLengthValidator(200)],
         unique=True,
     )
 
