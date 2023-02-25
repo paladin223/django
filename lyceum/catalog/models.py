@@ -1,5 +1,5 @@
-import core.models
 import catalog.validator
+import core.models
 
 from django.core import validators
 import django.core.exceptions
