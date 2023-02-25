@@ -54,7 +54,7 @@ def weight_validator(value):
 
 
 # Category
-class Category(core.models.AbstractModel):
+class Category(core.models.AbstractModelCatalog):
     slug = django.db.models.CharField(
         "Ссылка",
         default="",
@@ -76,7 +76,7 @@ class Category(core.models.AbstractModel):
 
 
 # Tag
-class Tag(core.models.AbstractModel):
+class Tag(core.models.AbstractModelCatalog):
     slug = django.db.models.CharField(
         "Ссылка",
         default="",
@@ -94,7 +94,7 @@ class Tag(core.models.AbstractModel):
 
 
 # Items
-class Item(core.models.AbstractModel):
+class Item(core.models.AbstractModelCatalog):
     category = django.db.models.ForeignKey(
         "Category",
         on_delete=django.db.models.CASCADE,
