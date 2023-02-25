@@ -83,13 +83,13 @@ class ModelsTest(django.test.TestCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        cls.category = catalog.models.CatalogCategory.objects.create(
+        cls.category = catalog.models.Category.objects.create(
             is_published=True,
             name="test category",
             slug="test-category-slug",
             weight=100,
         )
-        cls.tag = catalog.models.CatalogTag.objects.create(
+        cls.tag = catalog.models.Tag.objects.create(
             is_published=True,
             name="test category",
             slug="test-category-slug",
@@ -97,15 +97,15 @@ class ModelsTest(django.test.TestCase):
 
     @classmethod
     def tearDownClass(cls):
-        cls.category = catalog.models.CatalogCategory.objects.all().delete()
-        cls.item = catalog.models.CatalogItem.objects.all().delete()
-        cls.tag = catalog.models.CatalogTag.objects.all().delete()
+        cls.category = catalog.models.Category.objects.all().delete()
+        cls.item = catalog.models.Item.objects.all().delete()
+        cls.tag = catalog.models.Tag.objects.all().delete()
         super().tearDownClass()
 
     def test_unable_create_without_great_in_text(self):
-        item_count = catalog.models.CatalogItem.objects.count()
+        item_count = catalog.models.Item.objects.count()
         with self.assertRaises(django.core.exceptions.ValidationError):
-            self.item = catalog.models.CatalogItem(
+            self.item = catalog.models.Item(
                 name="test item",
                 category=self.category,
                 text="невероятный",
@@ -116,14 +116,14 @@ class ModelsTest(django.test.TestCase):
             self.item.tags.add(ModelsTest.tag)
 
         self.assertEqual(
-            catalog.models.CatalogItem.objects.count(),
+            catalog.models.Item.objects.count(),
             item_count,
         )
 
     @parameterized.parameterized.expand([("превосходно"), ("роскошно")])
     def test_good_catalog_item(self, value):
-        item_count = catalog.models.CatalogItem.objects.count()
-        self.item = catalog.models.CatalogItem(
+        item_count = catalog.models.Item.objects.count()
+        self.item = catalog.models.Item(
             name="item",
             category=self.category,
             text=value,
@@ -134,26 +134,26 @@ class ModelsTest(django.test.TestCase):
         self.item.tags.add(ModelsTest.tag)
 
         self.assertNotEqual(
-            catalog.models.CatalogItem.objects.count(), item_count
+            catalog.models.Item.objects.count(), item_count
         )
 
     def test_zero_vals_catalog_item(self):
-        item_count = catalog.models.CatalogItem.objects.count()
+        item_count = catalog.models.Item.objects.count()
         with self.assertRaises(django.core.exceptions.ValidationError):
-            self.item = catalog.models.CatalogItem()
+            self.item = catalog.models.Item()
             self.item.full_clean()
             self.item.save()
             self.item.tags.add(ModelsTest.tag)
 
         self.assertEqual(
-            catalog.models.CatalogItem.objects.count(),
+            catalog.models.Item.objects.count(),
             item_count,
         )
 
     def test_bad_slug_catalog_tag(self):
-        tag_count = catalog.models.CatalogTag.objects.count()
+        tag_count = catalog.models.Tag.objects.count()
         with self.assertRaises(django.core.exceptions.ValidationError):
-            self.item = catalog.models.CatalogTag(
+            self.item = catalog.models.Tag(
                 name="tag",
                 slug="probel -i_tekst",
                 is_published=True,
@@ -162,13 +162,13 @@ class ModelsTest(django.test.TestCase):
             self.item.save()
 
         self.assertEqual(
-            catalog.models.CatalogTag.objects.count(),
+            catalog.models.Tag.objects.count(),
             tag_count,
         )
 
     def test_good_slug_catalog_tag(self):
-        tag_count = catalog.models.CatalogTag.objects.count()
-        self.item = catalog.models.CatalogTag(
+        tag_count = catalog.models.Tag.objects.count()
+        self.item = catalog.models.Tag(
             name="tag",
             slug="probel-i_tekst",
             is_published=True,
@@ -177,7 +177,7 @@ class ModelsTest(django.test.TestCase):
         self.item.save()
 
         self.assertNotEqual(
-            catalog.models.CatalogTag.objects.count(),
+            catalog.models.Tag.objects.count(),
             tag_count,
         )
 
@@ -189,9 +189,9 @@ class ModelsTest(django.test.TestCase):
         ]
     )
     def test_bad_catalog_category_weight(self, value):
-        category_count = catalog.models.CatalogCategory.objects.count()
+        category_count = catalog.models.Category.objects.count()
         with self.assertRaises(django.core.exceptions.ValidationError):
-            self.item = catalog.models.CatalogCategory(
+            self.item = catalog.models.Category(
                 name="tag",
                 is_published=True,
                 slug="word-owl",
@@ -201,7 +201,7 @@ class ModelsTest(django.test.TestCase):
             self.item.save()
 
         self.assertEqual(
-            catalog.models.CatalogCategory.objects.count(),
+            catalog.models.Category.objects.count(),
             category_count,
         )
 
@@ -214,8 +214,8 @@ class ModelsTest(django.test.TestCase):
         ]
     )
     def test_good_catalog_category_weight(self, value):
-        category_count = catalog.models.CatalogCategory.objects.count()
-        self.item = catalog.models.CatalogCategory(
+        category_count = catalog.models.Category.objects.count()
+        self.item = catalog.models.Category(
             name="tag",
             is_published=True,
             slug="word-owl",
@@ -225,6 +225,6 @@ class ModelsTest(django.test.TestCase):
         self.item.save()
 
         self.assertNotEqual(
-            catalog.models.CatalogCategory.objects.count(),
+            catalog.models.Category.objects.count(),
             category_count,
         )
