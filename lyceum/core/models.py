@@ -1,5 +1,5 @@
-import django.db
 from django.core import validators
+import django.db
 
 
 # Abstract
@@ -11,11 +11,7 @@ class AbstractIsPublished(django.db.models.Model):
 
 
 class AbstractName(django.db.models.Model):
-    name = django.db.models.CharField(
-        "Название",
-        default="",
-        max_length=150
-    )
+    name = django.db.models.CharField("Название", default="", max_length=150)
 
     class Meta:
         abstract = True
@@ -26,8 +22,10 @@ class AbstractSlug(django.db.models.Model):
         "Ссылка",
         default="",
         max_length=150,
-        validators=[validators.validate_unicode_slug,
-                    validators.MaxLengthValidator(200)],
+        validators=[
+            validators.validate_unicode_slug,
+            validators.MaxLengthValidator(200),
+        ],
         unique=True,
     )
 

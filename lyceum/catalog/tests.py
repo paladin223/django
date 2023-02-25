@@ -133,9 +133,7 @@ class ModelsTest(django.test.TestCase):
         self.item.save()
         self.item.tags.add(ModelsTest.tag)
 
-        self.assertNotEqual(
-            catalog.models.Item.objects.count(), item_count
-        )
+        self.assertNotEqual(catalog.models.Item.objects.count(), item_count)
 
     def test_zero_vals_catalog_item(self):
         item_count = catalog.models.Item.objects.count()
