@@ -3,6 +3,20 @@ import re
 import django.core.exceptions
 
 
+class Validator:
+    def __init__(self, *arg):
+        self.words = arg
+
+    def __call__(self, value):
+        for it in self.words:
+            regex = rf"\s*[{it[0].upper()}{it[0]}]{it[1:]}[^a-z1-9A-Zа-яА-Я]*"
+            if re.fullmatch(regex, rf"{value}"):
+                return
+        raise django.core.exceptions.ValidationError(
+            f"В тексте должно быть одно из {self.words}"
+        )
+
+
 def text_validator(value):
     regex_r = r"\s*[Рр]оскошно[^a-z1-9A-Zа-яА-Я]*"
     regex_p = r"\s*[Пп]ревосходно[^a-z1-9A-Zа-яА-Я]*"

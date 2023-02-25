@@ -55,7 +55,11 @@ class Item(
     )
 
     text = django.db.models.TextField(
-        "Описание", default="", validators=[catalog.validator.text_validator]
+        "Описание",
+        default="",
+        validators=[
+            catalog.validator.Validator("роскошно", "классно", "замечательно")
+        ],
     )
 
     tags = django.db.models.ManyToManyField(
