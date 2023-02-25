@@ -1,101 +1,121 @@
 [
 {
-  "model": "catalog.catalogcategory",
+  "model": "catalog.category",
   "pk": 1,
   "fields": {
     "is_published": true,
-    "name": "Мясные изделия",
-    "slug": "myaco-kolbas",
-    "weight": 15
-  }
-},
-{
-  "model": "catalog.catalogcategory",
-  "pk": 2,
-  "fields": {
-    "is_published": true,
-    "name": "Молочные изделия",
+    "name": "РјРѕР»РѕС‡РЅР°СЏ РїСЂРѕРґСѓРєС†РёСЏ",
     "slug": "moloko-kefir",
-    "weight": 2
+    "weight": 1
   }
 },
 {
-  "model": "catalog.catalogtag",
-  "pk": 1,
-  "fields": {
-    "is_published": true,
-    "name": "закуска",
-    "slug": "aaaa"
-  }
-},
-{
-  "model": "catalog.catalogtag",
+  "model": "catalog.category",
   "pk": 2,
   "fields": {
     "is_published": true,
-    "name": "домашний уют",
-    "slug": "bbbb"
+    "name": "РјСЏСЃРЅР°СЏ РїСЂРѕРґСѓРєС†РёСЏ",
+    "slug": "myaso-salo",
+    "weight": 5
   }
 },
 {
-  "model": "catalog.catalogtag",
+  "model": "catalog.tag",
+  "pk": 1,
+  "fields": {
+    "is_published": true,
+    "name": "Р»РµРіРєРёР№",
+    "slug": "light"
+  }
+},
+{
+  "model": "catalog.tag",
+  "pk": 2,
+  "fields": {
+    "is_published": true,
+    "name": "РѕС‡РµРЅСЊ Р»РµРіРєРёР№",
+    "slug": "ultra-light"
+  }
+},
+{
+  "model": "catalog.tag",
   "pk": 3,
   "fields": {
     "is_published": true,
-    "name": "все для дома",
-    "slug": "cccc"
+    "name": "СЃСЂРµРґРЅРёР№",
+    "slug": "medium"
   }
 },
 {
-  "model": "catalog.catalogtag",
+  "model": "catalog.tag",
   "pk": 4,
   "fields": {
     "is_published": true,
-    "name": "быстрое приготовление",
-    "slug": "dddd"
+    "name": "С‚СЏР¶РµР»С‹Р№",
+    "slug": "heavy"
   }
 },
 {
-  "model": "catalog.catalogtag",
+  "model": "catalog.tag",
   "pk": 5,
   "fields": {
     "is_published": true,
-    "name": "премиум класс",
-    "slug": "eeee"
+    "name": "РѕС‡РµРЅСЊ С‚СЏР¶РµР»С‹Р№",
+    "slug": "super-heavy"
   }
 },
 {
-  "model": "catalog.catalogitem",
+  "model": "catalog.item",
   "pk": 1,
   "fields": {
     "is_published": true,
-    "name": "колбаса",
-    "text": "колбаса севелат превосходно вписывается в бутерброд",
-    "category": 2,
-    "tags": []
-  }
-},
-{
-  "model": "catalog.catalogitem",
-  "pk": 2,
-  "fields": {
-    "is_published": true,
-    "name": "молочный коктейль",
-    "text": "напиток из молока превосходно подходит для жаркого дня",
-    "category": 2,
+    "name": "РєРѕР»Р±Р°СЃР°",
+    "categories": 2,
+    "text": "РїСЂРµРІРѕСЃС…РѕРґРЅРѕ РІРїРёСЃС‹РІР°РµС‚СЃСЏ РІ Р±СѓС‚РµСЂР±СЂРѕРґ",
     "tags": [
+      1,
       2
     ]
   }
 },
 {
-  "model": "catalog.catalogitem",
+  "model": "catalog.item",
+  "pk": 2,
+  "fields": {
+    "is_published": true,
+    "name": "СЃС‹СЂ",
+    "categories": 1,
+    "text": "РїСЂРµРІРѕСЃС…РѕРґРЅРѕ РІРїРёСЃС‹РІР°РµС‚СЃСЏ РІ Р±СѓС‚РµСЂР±СЂРѕРґ",
+    "tags": [
+      1,
+      2,
+      3
+    ]
+  }
+},
+{
+  "model": "catalog.item",
   "pk": 3,
   "fields": {
     "is_published": true,
-    "name": "сыр",
-    "text": "превосходно вписывается в бутерброд",
-    "category": 2,
+    "name": "РјРѕР»РѕРєРѕ",
+    "categories": 2,
+    "text": "РЅР°РїРёС‚РѕРє РїСЂРµРІРѕСЃС…РѕРґРЅРѕ РІРїРёСЃС‹РІР°РµС‚СЃСЏ РІ РєРѕС„Рµ",
+    "tags": [
+      1,
+      3,
+      4
+    ]
+  }
+},
+{
+  "model": "catalog.item",
+  "pk": 4,
+  "fields": {
+    "is_published": true,
+    "name": "РјСЏСЃРѕ РµРґРёРѕСЂРѕРіР°",
+    "categories": 2,
+    "text": "СЂРѕСЃРєРѕС€РЅРѕ Р¶РёС‚СЊ РЅРµ Р·Р°РїСЂРµС‚РёС€СЊ",
     "tags": [
       3,
       4,
@@ -104,29 +124,16 @@
   }
 },
 {
-  "model": "catalog.catalogitem",
-  "pk": 4,
-  "fields": {
-    "is_published": true,
-    "name": "мясо единорога",
-    "text": "жить роскошно не запретишь",
-    "category": 2,
-    "tags": [
-      5
-    ]
-  }
-},
-{
-  "model": "catalog.catalogitem",
+  "model": "catalog.item",
   "pk": 5,
   "fields": {
     "is_published": true,
-    "name": "сыворотка",
-    "text": "превосходно вписывается в окрошку",
-    "category": 2,
+    "name": "РіРѕРІСЏРґРёРЅР°",
+    "categories": 2,
+    "text": "РјСЏСЃРѕ РїСЂРµРІРѕСЃС…РѕРґРЅРѕ РґР»СЏ РїСЂРёРіРѕС‚РѕРІР»РµРЅРёСЏ СЃС‚РµР№РєРѕРІ",
     "tags": [
-      1,
-      3
+      3,
+      4
     ]
   }
 }
