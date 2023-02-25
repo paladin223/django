@@ -4,14 +4,16 @@ import django.db
 
 # Abstract
 class AbstractIsPublished(django.db.models.Model):
-    is_published = django.db.models.BooleanField("Публикация", default=True)
+    is_published = django.db.models.BooleanField("публикация", default=True)
 
     class Meta:
         abstract = True
 
 
 class AbstractName(django.db.models.Model):
-    name = django.db.models.CharField("Название", default="", max_length=150)
+    name = django.db.models.CharField(
+        "название", default="", unique=True, max_length=150
+    )
 
     class Meta:
         abstract = True
@@ -19,7 +21,7 @@ class AbstractName(django.db.models.Model):
 
 class AbstractSlug(django.db.models.Model):
     slug = django.db.models.CharField(
-        "Ссылка",
+        "слаг",
         default="",
         max_length=150,
         validators=[

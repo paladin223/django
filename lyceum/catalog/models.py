@@ -15,7 +15,7 @@ class Category(
     core.models.AbstractStr,
 ):
     weight = django.db.models.BigIntegerField(
-        "Вес",
+        "вес",
         default=100,
         validators=[
             validators.MaxValueValidator(32767),
@@ -24,8 +24,8 @@ class Category(
     )
 
     class Meta:
-        verbose_name = "Категория"
-        verbose_name_plural = "Категории"
+        verbose_name = "категория"
+        verbose_name_plural = "категории"
 
 
 # Tag
@@ -36,8 +36,8 @@ class Tag(
     core.models.AbstractStr,
 ):
     class Meta:
-        verbose_name = "Тег"
-        verbose_name_plural = "Теги"
+        verbose_name = "тег"
+        verbose_name_plural = "теги"
 
 
 # Items
@@ -50,7 +50,7 @@ class Item(
         "Category",
         on_delete=django.db.models.CASCADE,
         verbose_name="категории",
-        related_name="categories",
+        related_name="category",
         default=2,
     )
 
@@ -59,9 +59,9 @@ class Item(
     )
 
     tags = django.db.models.ManyToManyField(
-        "Tag", verbose_name="тег", related_name="items"
+        "Tag", verbose_name="тег", related_name="tag"
     )
 
     class Meta:
-        verbose_name = "Товар"
-        verbose_name_plural = "Товары"
+        verbose_name = "товар"
+        verbose_name_plural = "товары"
