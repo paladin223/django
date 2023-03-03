@@ -9,10 +9,10 @@ register_converter(converters.RegCheck, "int_val")
 
 
 urlpatterns = [
-    path("", views.item_list, name="main ctalog page"),
-    path("<int:pk>/", views.item_detail, name="catalog detalisation"),
+    path("", views.item_list, name="main_catalog"),
+    path("<int:pk>/", views.item_detail, name="catalog_detalisation"),
     path(
-        "converter/<int_val:pk>/", views.item_detail, name="catalog converter"
+        "converter/<int_val:pk>/", views.item_detail, name="catalog_converter"
     ),
     re_path(
         r"^re/(?P<pk>[1-9][0-9]*)/$",

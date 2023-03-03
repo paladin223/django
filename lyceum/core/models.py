@@ -15,6 +15,9 @@ class AbstractName(django.db.models.Model):
         "название", default="", unique=True, max_length=150
     )
 
+    def __str__(self):
+        return self.name
+
     class Meta:
         abstract = True
 
@@ -30,14 +33,6 @@ class AbstractSlug(django.db.models.Model):
         ],
         unique=True,
     )
-
-    class Meta:
-        abstract = True
-
-
-class AbstractStr(django.db.models.Model):
-    def __str__(self):
-        return self.name
 
     class Meta:
         abstract = True

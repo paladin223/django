@@ -1,9 +1,8 @@
 from http import HTTPStatus
 
-import parameterized
-
 import django.core.exceptions
 import django.test
+import parameterized
 
 
 class StaticURLTests(django.test.TestCase):

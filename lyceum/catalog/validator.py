@@ -1,6 +1,7 @@
 import re
 
 import django.core.exceptions
+from django.utils.deconstruct import deconstructible
 
 
 class Validator:
@@ -9,9 +10,10 @@ class Validator:
 
     def __call__(self, value):
         for it in self.words:
-            regex = rf"\s*[{it[0].upper()}{it[0]}]{it[1:]}[^a-z1-9A-Zа-яА-Я]*"
-            if re.fullmatch(regex, rf"{value}"):
-                return
+            regex = rf"\s*{it[0]}{it[1:]}[^a-z1-9A-Zа-яА-Я]*"
+            print(regex)
+            if re.search(regex, rf"{value.lower()}"):
+                return True
         raise django.core.exceptions.ValidationError(
             f"В тексте должно быть одно из {self.words}"
         )

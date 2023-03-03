@@ -1,10 +1,10 @@
-import catalog.validator
-import core.models
-
 from django.core import validators
 import django.core.exceptions
 import django.db
 import django.db.models
+
+import catalog.validator
+import core.models
 
 
 # Category
@@ -12,7 +12,6 @@ class Category(
     core.models.AbstractSlug,
     core.models.AbstractIsPublished,
     core.models.AbstractName,
-    core.models.AbstractStr,
 ):
     weight = django.db.models.BigIntegerField(
         "вес",
@@ -33,7 +32,6 @@ class Tag(
     core.models.AbstractSlug,
     core.models.AbstractIsPublished,
     core.models.AbstractName,
-    core.models.AbstractStr,
 ):
     class Meta:
         verbose_name = "тег"
@@ -44,7 +42,6 @@ class Tag(
 class Item(
     core.models.AbstractIsPublished,
     core.models.AbstractName,
-    core.models.AbstractStr,
 ):
     category = django.db.models.ForeignKey(
         "Category",
@@ -58,7 +55,9 @@ class Item(
         "Описание",
         default="",
         validators=[
-            catalog.validator.Validator("роскошно", "классно", "замечательно")
+            catalog.validator.Validator(
+                "роскошно", "классно", "замечательно", "превосходно"
+            )
         ],
     )
 
