@@ -16,6 +16,16 @@ class CatalogCategoryAdmin(admin.ModelAdmin):
     list_display_links = (catalog.models.Category.name.field.name,)
 
 
+class ImageTabularInline(admin.TabularInline):
+    model = catalog.models.MainImage
+    readonly_fields = ("image_tmb",)
+
+
+class GalleryTabularInline(admin.TabularInline):
+    model = catalog.models.GalleryImage
+    readonly_fields = ("image_tmb",)
+
+
 @admin.register(catalog.models.Item)
 class CatalogItemAdmin(admin.ModelAdmin):
     list_display = (
@@ -25,6 +35,8 @@ class CatalogItemAdmin(admin.ModelAdmin):
     list_editable = (catalog.models.Item.is_published.field.name,)
     list_display_links = (catalog.models.Item.name.field.name,)
     filter_horizontal = (catalog.models.Item.tags.field.name,)
+    inlines = (ImageTabularInline, GalleryTabularInline,)
+    readonly_fields = ("img_tmb",)
 
 
 @admin.register(catalog.models.Tag)

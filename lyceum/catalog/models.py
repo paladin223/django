@@ -2,6 +2,9 @@ from django.core import validators
 import django.core.exceptions
 import django.db
 import django.db.models
+import django.template.defaultfilters
+import django.utils.safestring
+import sorl.thumbnail
 
 import catalog.validator
 import core.models
@@ -65,6 +68,47 @@ class Item(
         "Tag", verbose_name="тег", related_name="tag"
     )
 
+    @property
+    def get_img(self):
+        return sorl.thumbnail.get_thumbnail(
+            self.mainimage, "300x300", quality=99
+        )
+
+    def img_tmb(self):
+        if self.mainimage:
+            return django.utils.safestring.mark_safe(
+                f'<img src="{self.get_img.url}" />'
+            )
+        return "картинки нету :("
+
+    img_tmb.short_description = "превью"
+    img_tmb.allow_tags = True
+
     class Meta:
         verbose_name = "товар"
         verbose_name_plural = "товары"
+
+
+class MainImage(core.models.AbstractImage):
+    item = django.db.models.OneToOneField(
+        Item,
+        on_delete=django.db.models.CASCADE,
+        related_name="mainimage",
+        blank=True,
+    )
+
+    class Meta:
+        verbose_name = "Логотип"
+
+
+class GalleryImage(core.models.AbstractImage):
+    item = django.db.models.ForeignKey(
+        Item,
+        on_delete=django.db.models.CASCADE,
+        related_name="galleryimage",
+        blank=True,
+    )
+
+    class Meta:
+        verbose_name = "Фотография галереи"
+        verbose_name_plural = "Галерея"

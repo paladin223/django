@@ -1,11 +1,8 @@
-from http import HTTPStatus
-
-from django.http import HttpResponse
-
-
-def home(request):
-    return HttpResponse("<body>Главная</body>")
+import django.shortcuts
+from django.urls import path
 
 
-def coffee_status(request):
-    return HttpResponse("<body>Я чайник</body>", status=HTTPStatus.IM_A_TEAPOT)
+def homepage(request):
+    template = "homepage/main.html"
+    context = {}
+    return django.shortcuts.render(request, template, context)

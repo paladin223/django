@@ -1,5 +1,7 @@
-from django.http import HttpResponse
+import django.shortcuts
 
 
 def description(request):
-    return HttpResponse("<body>О проекте</body>")
+    template = ""
+    context = {}
+    return django.shortcuts(request, template, context)

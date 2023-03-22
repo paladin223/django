@@ -4,6 +4,7 @@ import django.core.exceptions
 from django.utils.deconstruct import deconstructible
 
 
+@deconstructible
 class Validator:
     def __init__(self, *arg):
         self.words = arg
