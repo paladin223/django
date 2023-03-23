@@ -48,9 +48,7 @@ class AbstractImage(django.db.models.Model):
 
     @property
     def get_img(self):
-        return sorl.thumbnail.get_thumbnail(
-            self.upload, "50x50", quality=99
-        )
+        return sorl.thumbnail.get_thumbnail(self.upload, "50x50", quality=99)
 
     def image_tmb(self):
         if self.upload:
