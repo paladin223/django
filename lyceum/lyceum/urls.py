@@ -5,8 +5,8 @@ from django.urls import include
 from django.urls import path
 
 urlpatterns = [
-    path("", include("homepage.urls"), name="main_page"),
-    path("about/", include("about.urls"), name="aboгte"),
+    path("", include("homepage.urls"), name="homepage"),
+    path("about/", include("about.urls"), name="about"),
     path("catalog/", include("catalog.urls"), name="catalog"),
     path("admin/", admin.site.urls, name="admin"),
 ]

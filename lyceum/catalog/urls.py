@@ -7,9 +7,10 @@ from . import views
 
 register_converter(converters.RegCheck, "int_val")
 
+app_name = "catalog"
 
 urlpatterns = [
-    path("", views.item_list, name="main_catalog"),
+    path("", views.item_list, name="main"),
     path("<int:pk>/", views.item_detail, name="catalog_detalisation"),
     path(
         "converter/<int_val:pk>/", views.item_detail, name="catalog_converter"

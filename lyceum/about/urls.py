@@ -2,4 +2,6 @@ from django.urls import path
 
 from . import views
 
-urlpatterns = [path("", views.description, name="about main")]
+app_name = "about"
+
+urlpatterns = [path("", views.description, name="about")]

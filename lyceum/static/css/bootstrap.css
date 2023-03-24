@@ -11780,4 +11780,10 @@ textarea.form-control-lg {
   }
 }
 
+.bootstrap-field {
+  display: inline-block; /* чтобы элемент занял только столько места, сколько нужно */
+  width: auto; /* чтобы размер поля был определен по его содержимому */
+  text-align: center; /* чтобы выровнять содержимое по центру */
+}
+
 /*# sourceMappingURL=bootstrap.css.map */

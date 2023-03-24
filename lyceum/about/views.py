@@ -1,7 +1,8 @@
 import django.shortcuts
+from django.urls import path
 
 
 def description(request):
-    template = ""
+    template = "about/main.html"
     context = {}
-    return django.shortcuts(request, template, context)
+    return django.shortcuts.render(request, template, context)

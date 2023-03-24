@@ -3,6 +3,6 @@ from django.urls import path
 
 
 def homepage(request):
-    template = "index.html"
+    template = "homepage/main.html"
     context = {}
     return django.shortcuts.render(request, template, context)

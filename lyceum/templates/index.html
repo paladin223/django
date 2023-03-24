@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
+      {% load static %}
       <meta charset="utf-8">
       <title>Main</title>
-      <link rel="icon" href="favicon.ico" type="image">
+      <link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/png" />
+      <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+      <link href="{% static 'css/all.css' %}" rel="stylesheet">
   </head>
-  <body>
+  <body class="all bg-gradient-custom">    
     <header>
       {% include "includes/header.html" %}
     </header>
@@ -13,13 +16,12 @@
     <nav>
       {% include "includes/nav.html" %}
     </nav>
-
     <main>
-
+      {% block main %}Контент не загружен{% endblock%}
     </main>
 
     <footer>
       {% include "includes/footer.html" %}
-    <footer>
+      <footer>
   </body>
 </html>
