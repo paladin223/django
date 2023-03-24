@@ -8,20 +8,25 @@
       <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
       <link href="{% static 'css/all.css' %}" rel="stylesheet">
   </head>
-  <body class="all bg-gradient-custom">    
-    <header>
-      {% include "includes/header.html" %}
-    </header>
-
-    <nav>
-      {% include "includes/nav.html" %}
-    </nav>
+  <body class="bg-gradient-custom">    
+    <div class="container-fluid">
+      <div class="row align-items-center">
+        <header class="col-3">
+          {% include "includes/header.html" %}
+        </header>
+        <nav class="col-6">
+          {% include "includes/nav.html" %}
+        </nav>
+        <div class="col-3"></div>
+      </div>
+    </div>
+    {% comment %} <img src="{% static 'images/кот.png' %}" alt="Кот" class="kot"> {% endcomment %}
     <main>
       {% block main %}Контент не загружен{% endblock%}
     </main>
 
     <footer>
       {% include "includes/footer.html" %}
-      <footer>
+    <footer>
   </body>
 </html>

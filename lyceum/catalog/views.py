@@ -5,7 +5,19 @@ from django.urls import path
 
 def item_list(request):
     template = "catalog/main.html"
-    context = {}
+    blocks = [
+        "Колбаса",
+        "Йогурт",
+        "Мясо",
+        "Хлеб",
+        "Вода",
+        "Колбаса",
+        "Йогурт",
+        "Мясо",
+        "Хлеб",
+        "Вода",
+    ]
+    context = {"carousel_items": blocks}
     return django.shortcuts.render(request, template, context)
 
 

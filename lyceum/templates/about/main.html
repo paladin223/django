@@ -1,5 +1,8 @@
 {% extends '../index.html' %}
+{% load static %}
 
 {% block main %}
   <h1 class="text-center">О магазине</h1>
+  <img src="{% static 'images/seller.jpg' %}" alt="Кот" class="mx-auto d-block mg_left">
+  <p class="text-center colored_white mt-2 text-lg">Магазин работает 24\7, мы рады обсуживать наших покупателей, а еще мы любим когда нам чешут пузо.</p>
 {% endblock %}
