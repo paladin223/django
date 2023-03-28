@@ -3,6 +3,6 @@ from django.urls import path
 
 
 def description(request):
-    template = "about/main.html"
+    template = "about/about.html"
     context = {}
     return django.shortcuts.render(request, template, context)

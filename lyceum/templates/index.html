@@ -1,21 +1,21 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-      {% load static %}
-      <meta charset="utf-8">
-      <title>Main</title>
-      <link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/png" />
-      <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
-      <link href="{% static 'css/all.css' %}" rel="stylesheet">
+    <meta charset="utf-8">
+    <title>{% block title %} Кот обормот {% endblock title %}</title>
+    <link rel="shortcut icon" href="{% static 'favicons/favicon.ico' %}" type="image/png" />
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'css/all.css' %}" rel="stylesheet">
   </head>
-  <body class="bg-gradient-custom">    
+  <body class="bg-gradient-custom">
     <div class="container-fluid">
       <div class="row align-items-center justify-content-center">
-          {% include "includes/nav.html" %}
+        {% include "includes/nav.html" %}
       </div>
     </div>
     <main class="mt-5">
-      {% block main %}Контент не загружен{% endblock%}
+      {% block main %} Контент не загружен {% endblock%}
     </main>
     <div class="footermaker"></div>
     {% include "includes/footer.html" %}

@@ -4,7 +4,7 @@ from django.urls import path
 
 
 def item_list(request):
-    template = "catalog/main.html"
+    template = "catalog/catalog.html"
     blocks = [
         "Колбаса",
         "Йогурт",
