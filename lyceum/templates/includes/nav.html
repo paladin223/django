@@ -1,7 +1,7 @@
 {% load static %}
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
-    <a class="navbar-brand" href="#"><img src="{% static 'images/cat-logo.png' %}" alt="Logo" width="60" height="60"></a>
+    <a class="navbar-brand" href="{% url "homepage:homepage_view" %}"><img src="{% static 'images/cat-logo.png' %}" alt="Logo" width="60" height="60"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -9,13 +9,13 @@
       <ul class="navbar-nav">
         {% with request.resolver_match.view_name as view_name %}
         <li class="nav-item">
-          <a class="nav-link {% if view_name == "homepage:homepage_view" %}active deactivate{% endif %}" href="{% url "homepage:homepage_view" %}">Главная</a>
+          <a class="nav-link {% if view_name == "homepage:homepage_view" %}active disabled{% endif %}" href="{% url "homepage:homepage_view" %}">Главная</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {% if view_name == "catalog:main" %}active deactivate{% endif %}" href="{% url "catalog:main" %}">Каталог</a>
+          <a class="nav-link {% if view_name == "catalog:main" %}active disabled{% endif %}" href="{% url "catalog:main" %}">Каталог</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {% if view_name == "about:about" %}active deactivate{% endif %}" href="{% url "about:about" %}">О проекте</a>
+          <a class="nav-link {% if view_name == "about:about" %}active disabled{% endif %}" href="{% url "about:about" %}">О проекте</a>
         </li>
         {% endwith %}
       </ul>
