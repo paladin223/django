@@ -31,3 +31,11 @@ Python 3.10 Django 3.2.16
 Логин/пароль для `/admin/` user/user
 
 Cоздать админ пользователя командой `python manage.py createsuperuser `
+
+## Полезные команды (исполнять из корня проекта)
+
+| Задача | Команды |
+| :---: | :--- |
+| Создание фикстуры | <code>python -Xutf8 ./lyceum/manage.py dumpdata -e contenttypes -e auth.Permission -e thumbnail.kvstore -e sessions.session --indent 2 -o data.json |
+| Подгрузка фикстуры | <code>python ./lyceum/manage.py makemigrations</code></br><code>python ./lyceum/manage.py migrate --run-syncdb</code></br><code>python ./lyceum/manage.py loaddata "data.json"</code>
+| тестовый админ admin - admin |
