@@ -63,17 +63,15 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    # sorl-thumbnail
-    "sorl.thumbnail",
-    # debug_toolbar
+    # imported
     "debug_toolbar",
+    "django_cleanup.apps.CleanupConfig",
+    "sorl.thumbnail",
     # my apps
     "about.apps.AboutConfig",
     "catalog.apps.CatalogConfig",
-    "homepage.apps.HomepageConfig",
     "core.apps.CoreConfig",
-    # django-cleanup
-    "django_cleanup.apps.CleanupConfig",
+    "homepage.apps.HomepageConfig",
 ]
 
 MIDDLEWARE = [
