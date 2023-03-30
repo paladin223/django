@@ -58,16 +58,10 @@ class Item(
     text = django.db.models.TextField(
         "Описание",
         default="",
-        validators=[
-            catalog.validator.Validator(
-                "роскошно", "превосходно"
-            )
-        ],
+        validators=[catalog.validator.Validator("роскошно", "превосходно")],
     )
 
-    tags = django.db.models.ManyToManyField(
-        "Tag", verbose_name="тег"
-    )
+    tags = django.db.models.ManyToManyField("Tag", verbose_name="тег")
 
     @property
     def get_img(self):

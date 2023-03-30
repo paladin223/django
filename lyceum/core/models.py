@@ -1,4 +1,3 @@
-from django.core import validators
 import django.db
 import django.utils.safestring
 import sorl.thumbnail

@@ -1,5 +1,4 @@
 [flake8]
-ignore = F401
 import-order-style = google
 inline-quotes = double
 application-import-names = catalog,core

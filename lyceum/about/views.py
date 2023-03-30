@@ -1,5 +1,4 @@
 import django.shortcuts
-from django.urls import path
 
 
 def description(request):

@@ -1,6 +1,5 @@
 from django.http import HttpResponse
 import django.shortcuts
-from django.urls import path
 
 
 def item_list(request):
