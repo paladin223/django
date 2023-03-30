@@ -28,6 +28,7 @@ class Category(
     class Meta:
         verbose_name = "категория"
         verbose_name_plural = "категории"
+        default_related_name = "category"
 
 
 # Tag
@@ -39,6 +40,7 @@ class Tag(
     class Meta:
         verbose_name = "тег"
         verbose_name_plural = "теги"
+        default_related_name = "tag"
 
 
 # Items
@@ -50,7 +52,6 @@ class Item(
         "Category",
         on_delete=django.db.models.CASCADE,
         verbose_name="категории",
-        related_name="category",
         default=2,
     )
 
@@ -65,7 +66,7 @@ class Item(
     )
 
     tags = django.db.models.ManyToManyField(
-        "Tag", verbose_name="тег", related_name="tag"
+        "Tag", verbose_name="тег"
     )
 
     @property
@@ -87,13 +88,13 @@ class Item(
     class Meta:
         verbose_name = "товар"
         verbose_name_plural = "товары"
+        default_related_name = "item"
 
 
 class MainImage(core.models.AbstractImage):
     item = django.db.models.OneToOneField(
         Item,
         on_delete=django.db.models.CASCADE,
-        related_name="mainimage",
         blank=True,
     )
 
@@ -105,7 +106,6 @@ class GalleryImage(core.models.AbstractImage):
     item = django.db.models.ForeignKey(
         Item,
         on_delete=django.db.models.CASCADE,
-        related_name="galleryimage",
         blank=True,
     )
 
