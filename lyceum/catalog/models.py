@@ -60,7 +60,7 @@ class Item(
         default="",
         validators=[
             catalog.validator.Validator(
-                "роскошно", "классно", "замечательно", "превосходно"
+                "роскошно", "превосходно"
             )
         ],
     )
