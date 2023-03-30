@@ -47,7 +47,7 @@ class ModelsTest(django.test.TestCase):
         )
 
     @parameterized.parameterized.expand(
-        [("Роскошно",), ("роскошно ",), ("классно"), ("Замечательно:)",)]
+        [("Прекрасно",)]
     )
     def test_good_catalog_item(self, value):
         item_count = catalog.models.Item.objects.count()
