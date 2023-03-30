@@ -25,14 +25,10 @@ class AbstractName(django.db.models.Model):
 
 
 class AbstractSlug(django.db.models.Model):
-    slug = django.db.models.CharField(
+    slug = django.db.models.SlugField(
         "слаг",
         default="",
-        max_length=150,
-        validators=[
-            validators.validate_unicode_slug,
-            validators.MaxLengthValidator(200),
-        ],
+        max_length=200,
         unique=True,
     )
 
