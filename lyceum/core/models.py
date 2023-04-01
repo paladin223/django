@@ -52,6 +52,12 @@ class AbstractImage(django.db.models.Model):
             )
         return "картинки нету :("
 
+    @property
+    def image_cropped(self):
+        return sorl.thumbnail.get_thumbnail(self.upload,
+                                            "1000x1000",
+                                            crop="center")
+
     image_tmb.short_description = "превью"
     image_tmb.allow_tags = True
 
