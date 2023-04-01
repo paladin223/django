@@ -13,8 +13,9 @@ urlpatterns = [
     path("", views.item_list, name="main"),
     path("<int:pk>/", views.item_detail, name="item_detail"),
     path(
-        "converter/<int_val:pk>/", views.item_detail_old,
-        name="catalog_converter"
+        "converter/<int_val:pk>/",
+        views.item_detail_old,
+        name="catalog_converter",
     ),
     re_path(
         r"^re/(?P<pk>[1-9][0-9]*)/$",

@@ -18,9 +18,9 @@ def item_list(request):
 def item_detail(request, pk):
     template = "catalog/includes/item.html"
     item = get_object_or_404(
-            catalog.models.Item.objects.published(),
-            id=pk,
-        )
+        catalog.models.Item.objects.published(),
+        id=pk,
+    )
     context = {"item": item}
     return django.shortcuts.render(request, template, context)
 
