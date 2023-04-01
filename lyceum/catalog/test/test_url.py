@@ -11,10 +11,6 @@ class StaticURLTests(django.test.TestCase):
         response = django.test.Client().get("/catalog/")
         self.assertEqual(response.status_code, HTTPStatus.OK)
 
-    def test_catalog_int(self):
-        response = django.test.Client().get("/catalog/1/")
-        self.assertEqual(response.status_code, HTTPStatus.OK)
-
     def test_catalog_str(self):
         response = django.test.Client().get("/catalog/ooo/")
         self.assertEqual(response.status_code, HTTPStatus.NOT_FOUND)

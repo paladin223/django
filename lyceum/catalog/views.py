@@ -1,4 +1,5 @@
 import django.db.models
+from django.http import HttpResponse
 import django.shortcuts
 from django.shortcuts import get_object_or_404
 
@@ -22,3 +23,7 @@ def item_detail(request, pk):
         )
     context = {"item": item}
     return django.shortcuts.render(request, template, context)
+
+
+def item_detail_old(request, pk):
+    return HttpResponse(f"<body>Подробно элемент {pk}</body>")
