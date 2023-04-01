@@ -11,7 +11,7 @@ app_name = "catalog"
 
 urlpatterns = [
     path("", views.item_list, name="main"),
-    path("<int:pk>/", views.item_detail, name="catalog_detalisation"),
+    path("<int:pk>/", views.item_detail, name="item_detail"),
     path(
         "converter/<int_val:pk>/", views.item_detail, name="catalog_converter"
     ),

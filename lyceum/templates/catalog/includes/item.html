@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+{% load static %}
+
+
+{% block main %}
+<div class="container py-5">
+  <div class="row">
+      <div class="col-lg-6">
+          <img class="img-fluid" src="{{ item.img_detail.url }}" alt="Product Image">
+      </div>
+      <div class="col-lg-6">
+          <h1>{{ item.name }}</h1>
+          <h5>{{ item.category }}</h5>
+          <hr>
+          <h6>Теги:</h6>
+          <div class="d-flex flex-wrap">
+          {% for tag in item.tags.all %}
+            <span class="rounded-pill bg-primary text-light px-3 py-1 mb-2 mr-2">{{ tag.name }}</span>
+          {% endfor %}
+        </div>
+          <hr>
+          <p>{{ item.text|truncatewords_html:10|safe }}</p>
+      </div>
+  </div>
+</div>
+{% endblock main %}

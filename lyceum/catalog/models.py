@@ -4,7 +4,6 @@ import django.db.models
 import django.template.defaultfilters
 import django.utils.safestring
 import sorl.thumbnail
-from django.db.models.functions import Lower
 
 import catalog.validator
 import core.models
@@ -58,25 +57,27 @@ class Tag(
 
 class ItemManager(django.db.models.Manager):
     def published(self):
-        return (self.get_queryset()
-                .filter(is_published=True)
-                .select_related(Category._meta.model_name,
-                                "mainimage",)
-                .prefetch_related(
-                    django.db.models.Prefetch(
-                        Item.tags.field.name,
-                        queryset=Tag.objects.published()
-                        .only(Tag.name.field.name),
-                    )
-                )
-                .only(
-                    Item.name.field.name,
-                    Item.text.field.name,
-                    f"{Item.category.field.name}__{Category.name.field.name}",
+        return (
+            self.get_queryset()
+            .filter(is_published=True)
+            .select_related(
+                Category._meta.model_name,
+                "mainimage",
+            )
+            .prefetch_related(
+                django.db.models.Prefetch(
                     Item.tags.field.name,
-                    Item._meta.get_field("mainimage").name,
+                    queryset=Tag.objects.published().only(Tag.name.field.name),
                 )
-                )
+            )
+            .only(
+                Item.name.field.name,
+                Item.text.field.name,
+                f"{Item.category.field.name}__{Category.name.field.name}",
+                Item.tags.field.name,
+                Item._meta.get_field("mainimage").name,
+            )
+        )
 
 
 # Items
@@ -114,6 +115,12 @@ class Item(
     def img_catalog(self):
         return sorl.thumbnail.get_thumbnail(
             self.mainimage, "150x100", crop="center"
+        )
+
+    @property
+    def img_detail(self):
+        return sorl.thumbnail.get_thumbnail(
+            self.mainimage, "500x500", crop="center"
         )
 
     def img_tmb(self):

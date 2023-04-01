@@ -15,7 +15,7 @@
           {% endfor %}
       </div>
       <div class="mt-2">
-          <a href="#" class="btn btn-primary mb-3">Купить</a>
+          <a href="{% url "catalog:item_detail" item.id %}"class="btn btn-primary mb-3">Купить</a>
       </div>
     </div>
   </div>
