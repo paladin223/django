@@ -6,4 +6,16 @@
   <h1 class="text-center">Cat shop</h1>
   <img src="{% static 'images/кот.png' %}" alt="Кот" class="mx-auto d-block mg_left">
   <p class="text-center colored_white mt-2 text-lg">Это магазин этого прекрасного котика, покупая продукты вы радуете кота</p>
+{% if items %}
+<div class="container">
+  <h1 class="text-center my-4">Популярное</h1>
+    <div class="py-5 mb-5 d-flex flex-column justify-content-center">
+      <div class="row">
+        {% for item in items %}
+          {% include "../catalog/includes/detail.html" %} 
+        {% endfor %}
+      </div>
+    </div>
+</div>
+{% endif %}
 {% endblock %}

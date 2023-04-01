@@ -1,0 +1,22 @@
+<div class="col-md-4 mb-4 align-self-stretch">
+  <div class="card h-100">
+    <img class="card-img-top" src="{{ item.img_catalog.url }}" alt="Product Image">
+    <div class="card-body d-flex flex-column text-center">
+      <div class="mt-auto">
+          <h5 class="card-title">{{ item.name }}</h5>
+          <p class="card-text">{{ item.text|truncatewords_html:10|safe }}</p>
+          <p class="mt-2">
+              <span class="bg-primary text-white p-2 rounded">{{ item.category }}</span>
+          </p>
+      </div>
+      <div class="mt-2">
+          {% for tag in item.tags.all %}
+            <span class="badge bg-primary text-white p-2 rounded d-inline-block mr-2">{{ tag.name }}</span>
+          {% endfor %}
+      </div>
+      <div class="mt-2">
+          <a href="#" class="btn btn-primary mb-3">Купить</a>
+      </div>
+    </div>
+  </div>
+</div>

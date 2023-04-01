@@ -1,22 +1,15 @@
 from django.http import HttpResponse
 import django.shortcuts
+import django.db.models
+
+import catalog.models
 
 
 def item_list(request):
     template = "catalog/catalog.html"
-    blocks = [
-        "Колбаса",
-        "Йогурт",
-        "Мясо",
-        "Хлеб",
-        "Вода",
-        "Колбаса",
-        "Йогурт",
-        "Мясо",
-        "Хлеб",
-        "Вода",
-    ]
-    context = {"carousel_items": blocks}
+    context = {"items": catalog.models.Item.objects.published()
+               .order_by("category")}
+
     return django.shortcuts.render(request, template, context)
 
 

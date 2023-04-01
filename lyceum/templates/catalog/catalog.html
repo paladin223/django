@@ -3,20 +3,16 @@
 
 {% block title %}Каталог{% endblock title %}
 {% block main %}
+{% if items %}
 <div class="container">
-  <h1 class="text-center my-4">Каталог товров</h1>
-  <div class="row">
-    {% for item in carousel_items %}
-    <div class="col-md-4 mb-4">
-      <div class="card">
-        <img class="card-img-top" src="{% static 'catalog/default.png' %}" alt="Product Image" width="250" height="400">
-        <div class="card-body text-center">
-          <h5 class="card-title">{{ item }}</h5>
-          <a href="#" class="btn btn-primary">Купить</a>
-        </div>
+  <h1 class="text-center my-4">Товары</h1>
+    <div class="py-5 mb-5 d-flex flex-column justify-content-center">
+      <div class="row">
+        {% for item in items %}
+          {% include "../catalog/includes/detail.html" %} 
+        {% endfor %}
       </div>
     </div>
-    {% endfor %}
-  </div>
 </div>
+{% endif %}
 {% endblock %}
