@@ -14,10 +14,6 @@ class CategoryManager(django.db.models.Manager):
         return (
             self.get_queryset()
             .filter(is_published=True)
-            .select_related(
-                catalog.models.Category._meta.model_name,
-                "mainimage",
-            )
             .only(Category.name.field.name)
         )
 
@@ -74,11 +70,18 @@ class ItemManager(django.db.models.Manager):
             .filter(
                 is_published=True,
             )
+            .select_related("category", "mainimage")
             .prefetch_related(
                 django.db.models.Prefetch(
                     Item.tags.field.name,
                     queryset=Tag.objects.published().only(Tag.name.field.name),
                 )
+            )
+            .only(
+                "name",
+                "text",
+                f"{Item.category.field.name}" f"__{Category.name.field.name}",
+                "tags",
             )
         )
 

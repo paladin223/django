@@ -62,6 +62,21 @@ class ContextTests(TestCase):
 
     def test_catalog_list_context(self):
         response = Client().get(reverse("catalog:main"))
+        self.assertIn(
+            "items",
+            response.context,
+            'В контексте присутствует лишний элемент "items"',
+        )
+        self.assertIn(
+            "show_category",
+            response.context,
+            'В контексте отсутствует обязательный элемент "items"',
+        )
+        self.assertNotIn(
+            "testooo",
+            response.context,
+            'В контексте отсутствует обязательный элемент "items"',
+        )
         self.assertEqual(
             response.status_code,
             200,
