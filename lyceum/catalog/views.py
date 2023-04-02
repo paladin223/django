@@ -10,7 +10,7 @@ def item_list(request):
     template = "catalog/catalog.html"
     context = {
         "items": catalog.models.Item.objects.published().order_by(
-            "category", "name"
+            "name", "category"
         ),
         "show_category": False,
     }
