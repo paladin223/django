@@ -15,6 +15,16 @@
         {% include "includes/nav.html" %}
       </div>
     </div>
+    {% if messages %}
+        <div class="d-flex flex-column container-fluid mt-3 position-fixed" style="top: 6em; z-index:1;">
+        {% for message in messages %}
+        <div class="d-inline-flex gap-3 alert alert-{{ message.tags|default:"info" }} fade show align-middle mx-auto" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
+        </div>
+    {% endif %}
     <main class="mt-5">
       {% block main %} Контент не загружен {% endblock%}
     </main>
