@@ -83,6 +83,7 @@ class ItemManager(django.db.models.Manager):
                 f"{Item.category.field.name}" f"__{Category.name.field.name}",
                 "tags",
             )
+            .order_by("name")
         )
 
 
