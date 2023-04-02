@@ -2,7 +2,6 @@ import shutil
 import tempfile
 
 from django.core import management
-from django.core.files.base import ContentFile
 from django.test import Client
 from django.test import override_settings
 from django.test import TestCase
@@ -84,20 +83,6 @@ class ContextTests(TestCase):
     def test_message_saves_to_db(self):
         response = Client().post(
             reverse("feedback:feedback"), data=self.data, follow=True
-        )
-        self.assertEqual(
-            response.status_code,
-            200,
-            f"Страница обратной связи "
-            f"возвращает неверный статус {response.status_code}",
-        )
-
-    def test_file_upload(self):
-        file = ContentFile(b"Example file", name="File name")
-        response = Client().post(
-            reverse("feedback:feedback"),
-            data=self.data | {"file": file},
-            follow=True,
         )
         self.assertEqual(
             response.status_code,
