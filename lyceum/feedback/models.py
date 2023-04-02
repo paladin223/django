@@ -13,19 +13,12 @@ class Author(models.Model):
 
 
 class Feedback(models.Model):
-    class Status(models.TextChoices):
-        PENDING = "pending", "Получено"
-        IN_PROGRESS = "in progress", "В обработке"
-        COMPLETED = "completed", "Ответ дан"
-
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
     text = models.TextField("содержание", blank=False)
     created_on = models.DateTimeField("создано", auto_now_add=True)
     status = models.CharField(
         "статус",
-        choices=Status.choices,
         max_length=11,
-        default=Status.PENDING,
         blank=False,
     )
 
