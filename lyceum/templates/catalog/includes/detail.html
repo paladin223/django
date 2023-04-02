@@ -5,9 +5,11 @@
       <div class="mt-auto">
           <h5 class="card-title">{{ item.name }}</h5>
           <p class="card-text">{{ item.text|truncatewords_html:10|safe }}</p>
+          {% if show_category %}
           <p class="mt-2">
-              <span class="bg-primary text-white p-2 rounded">{{ item.category }}</span>
+            <span class="bg-primary text-white p-2 rounded">{{ item.category }}</span>
           </p>
+          {% endif %}
       </div>
       <div class="mt-2">
           {% for tag in item.tags.all %}
@@ -15,7 +17,7 @@
           {% endfor %}
       </div>
       <div class="mt-2">
-          <a href="{% url "catalog:item_detail" item.id %}"class="btn btn-primary mb-3">Купить</a>
+          <a href="{% url "catalog:item_detail" item.id %}" class="btn btn-primary mb-3">Купить</a>
       </div>
     </div>
   </div>

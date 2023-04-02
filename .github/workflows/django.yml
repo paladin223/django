@@ -29,5 +29,5 @@ jobs:
       run: |
         cd lyceum
         python manage.py test about
-        python manage.py test homepage
+        python manage.py test homepage/test
         python manage.py test "catalog/test"

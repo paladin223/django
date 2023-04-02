@@ -5,6 +5,6 @@ from . import views
 app_name = "homepage"
 
 urlpatterns = [
-    path("", views.homepage, name="homepage_view"),
+    path("", views.homepage, name="home"),
     path("coffee/", views.permission_denied_coffee),
 ]

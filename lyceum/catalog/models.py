@@ -11,9 +11,15 @@ import core.models
 
 class CategoryManager(django.db.models.Manager):
     def published(self):
-        return (self.get_queryset()
-                .filter(is_published=True)
-                .only(Category.name.field.name))
+        return (
+            self.get_queryset()
+            .filter(is_published=True)
+            .select_related(
+                catalog.models.Category._meta.model_name,
+                "mainimage",
+            )
+            .only(Category.name.field.name)
+        )
 
 
 # Category
@@ -40,9 +46,11 @@ class Category(
 
 class TagManager(django.db.models.Manager):
     def published(self):
-        return (self.get_queryset()
-                .filter(is_published=True)
-                .only(Tag.name.field.name))
+        return (
+            self.get_queryset()
+            .filter(is_published=True)
+            .only(Tag.name.field.name)
+        )
 
 
 # Tag
@@ -63,45 +71,14 @@ class ItemManager(django.db.models.Manager):
     def published(self):
         return (
             self.get_queryset()
-            .filter(is_published=True)
-            .select_related(
-                Category._meta.model_name,
-                "mainimage",
+            .filter(
+                is_published=True,
             )
             .prefetch_related(
                 django.db.models.Prefetch(
                     Item.tags.field.name,
                     queryset=Tag.objects.published().only(Tag.name.field.name),
                 )
-            )
-            .only(
-                Item.name.field.name,
-                Item.text.field.name,
-                f"{Item.category.field.name}__{Category.name.field.name}",
-                Item.tags.field.name,
-            )
-        )
-
-    def published_item(self):
-        return (
-            self.published()
-            .filter(is_published=True)
-            .select_related(
-                Category._meta.model_name,
-                "mainimage",
-            )
-            .prefetch_related(
-                django.db.models.Prefetch(
-                    Item.tags.field.name,
-                    queryset=Tag.objects.published().only(Tag.name.field.name),
-                )
-            )
-            .only(
-                Item.name.field.name,
-                Item.text.field.name,
-                f"{Item.category.field.name}__{Category.name.field.name}",
-                Item.tags.field.name,
-                
             )
         )
 

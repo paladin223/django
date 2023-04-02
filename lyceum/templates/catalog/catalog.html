@@ -9,7 +9,7 @@
     <div class="py-5 mb-5 d-flex flex-column justify-content-center">
       <div class="row">
         {% for item in items %}
-          {% include "../catalog/includes/detail.html" %} 
+          {% include "../catalog/includes/detail.html" with path=request.path%} 
         {% endfor %}
       </div>
     </div>
