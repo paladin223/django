@@ -1,0 +1,654 @@
+[
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2023-03-31T23:34:13.652Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "1",
+    "object_repr": "Прикольные",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2023-03-31T23:34:17.410Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "1",
+    "object_repr": "Прикольные",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2023-03-31T23:34:27.049Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "2",
+    "object_repr": "супер",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2023-03-31T23:34:42.463Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "1",
+    "object_repr": "для всех",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2023-03-31T23:34:53.326Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "2",
+    "object_repr": "для меня",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2023-03-31T23:35:04.088Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "3",
+    "object_repr": "для него",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2023-03-31T23:35:05.316Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "3",
+    "object_repr": "для него",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2023-03-31T23:35:12.236Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "4",
+    "object_repr": "для неё",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2023-03-31T23:36:10.586Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "1",
+    "object_repr": "роллы",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2023-03-31T23:36:36.894Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "2",
+    "object_repr": "Кот",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"\\u041b\\u043e\\u0433\\u043e\\u0442\\u0438\\u043f\", \"object\": \"uploads/\\u043a\\u043e\\u0442.png\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2023-03-31T23:36:59.939Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "1",
+    "object_repr": "роллы",
+    "action_flag": 2,
+    "change_message": "[{\"added\": {\"name\": \"\\u041b\\u043e\\u0433\\u043e\\u0442\\u0438\\u043f\", \"object\": \"uploads/sushi.webp\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2023-03-31T23:53:11.725Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "2",
+    "object_repr": "Кот",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u041f\\u043e\\u043a\\u0430\\u0437\\u044b\\u0432\\u0430\\u0435\\u0442\\u0441\\u044f \\u043d\\u0430 \\u0433\\u043b\\u0430\\u0432\\u043d\\u043e\\u0439\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2023-04-01T09:11:15.203Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "2",
+    "object_repr": "Кот",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u041f\\u043e\\u043a\\u0430\\u0437\\u044b\\u0432\\u0430\\u0435\\u0442\\u0441\\u044f \\u043d\\u0430 \\u0433\\u043b\\u0430\\u0432\\u043d\\u043e\\u0439\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2023-04-01T16:11:17.081Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "2",
+    "object_repr": "Кот",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u041f\\u043e\\u043a\\u0430\\u0437\\u044b\\u0432\\u0430\\u0435\\u0442\\u0441\\u044f \\u043d\\u0430 \\u0433\\u043b\\u0430\\u0432\\u043d\\u043e\\u0439\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2023-04-01T16:11:34.171Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "1",
+    "object_repr": "а какие роллы",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2023-04-01T16:13:32.986Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "1",
+    "object_repr": "А какие роллы",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2023-04-01T16:13:55.475Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "1",
+    "object_repr": "а какие роллы",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2023-04-01T16:16:38.276Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "1",
+    "object_repr": "А какие роллы",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2023-04-01T16:16:55.868Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "1",
+    "object_repr": "апельсиновые роллы",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2023-04-01T16:26:13.893Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "3",
+    "object_repr": "Неизвестный",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"\\u041b\\u043e\\u0433\\u043e\\u0442\\u0438\\u043f\", \"object\": \"uploads/default.png\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 21,
+  "fields": {
+    "action_time": "2023-04-01T16:26:40.000Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "2",
+    "object_repr": "Кот",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 22,
+  "fields": {
+    "action_time": "2023-04-01T17:00:57.653Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "3",
+    "object_repr": "неизвестный",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 23,
+  "fields": {
+    "action_time": "2023-04-01T17:01:03.676Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "2",
+    "object_repr": "кот",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 24,
+  "fields": {
+    "action_time": "2023-04-01T17:02:23.595Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "2",
+    "object_repr": "Кот",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 25,
+  "fields": {
+    "action_time": "2023-04-01T17:04:50.247Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "2",
+    "object_repr": "кот",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 26,
+  "fields": {
+    "action_time": "2023-04-01T17:05:30.242Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "2",
+    "object_repr": "Кот",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 27,
+  "fields": {
+    "action_time": "2023-04-01T17:09:46.180Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "2",
+    "object_repr": "кот",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 28,
+  "fields": {
+    "action_time": "2023-04-01T19:15:48.891Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "4",
+    "object_repr": "товар",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 29,
+  "fields": {
+    "action_time": "2023-04-01T19:16:04.763Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "4",
+    "object_repr": "товар",
+    "action_flag": 2,
+    "change_message": "[{\"added\": {\"name\": \"\\u041b\\u043e\\u0433\\u043e\\u0442\\u0438\\u043f\", \"object\": \"uploads/default_krpZ8gC.png\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 30,
+  "fields": {
+    "action_time": "2023-04-01T21:58:06.187Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "2",
+    "object_repr": "кот",
+    "action_flag": 2,
+    "change_message": "[{\"added\": {\"name\": \"\\u0424\\u043e\\u0442\\u043e\\u0433\\u0440\\u0430\\u0444\\u0438\\u044f \\u0433\\u0430\\u043b\\u0435\\u0440\\u0435\\u0438\", \"object\": \"uploads/\\u043a\\u043e\\u0442_TLzhsrc.png\"}}, {\"added\": {\"name\": \"\\u0424\\u043e\\u0442\\u043e\\u0433\\u0440\\u0430\\u0444\\u0438\\u044f \\u0433\\u0430\\u043b\\u0435\\u0440\\u0435\\u0438\", \"object\": \"uploads/\\u043a\\u043e\\u0442_bYCwmut.png\"}}, {\"added\": {\"name\": \"\\u0424\\u043e\\u0442\\u043e\\u0433\\u0440\\u0430\\u0444\\u0438\\u044f \\u0433\\u0430\\u043b\\u0435\\u0440\\u0435\\u0438\", \"object\": \"uploads/\\u043a\\u043e\\u0442_lFLIhez.png\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 31,
+  "fields": {
+    "action_time": "2023-04-01T22:10:17.828Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "2",
+    "object_repr": "кот",
+    "action_flag": 2,
+    "change_message": "[{\"added\": {\"name\": \"\\u0424\\u043e\\u0442\\u043e\\u0433\\u0440\\u0430\\u0444\\u0438\\u044f \\u0433\\u0430\\u043b\\u0435\\u0440\\u0435\\u0438\", \"object\": \"uploads/seller.jpg\"}}, {\"deleted\": {\"name\": \"\\u0424\\u043e\\u0442\\u043e\\u0433\\u0440\\u0430\\u0444\\u0438\\u044f \\u0433\\u0430\\u043b\\u0435\\u0440\\u0435\\u0438\", \"object\": \"uploads/\\u043a\\u043e\\u0442_bYCwmut.png\"}}, {\"deleted\": {\"name\": \"\\u0424\\u043e\\u0442\\u043e\\u0433\\u0440\\u0430\\u0444\\u0438\\u044f \\u0433\\u0430\\u043b\\u0435\\u0440\\u0435\\u0438\", \"object\": \"uploads/\\u043a\\u043e\\u0442_lFLIhez.png\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 32,
+  "fields": {
+    "action_time": "2023-04-02T00:44:00.604Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "1",
+    "object_repr": "апельсиновые роллы",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u041a\\u0430\\u0442\\u0435\\u0433\\u043e\\u0440\\u0438\\u0438\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 33,
+  "fields": {
+    "action_time": "2023-04-02T00:44:16.368Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "2",
+    "object_repr": "кот",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u041a\\u0430\\u0442\\u0435\\u0433\\u043e\\u0440\\u0438\\u0438\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 34,
+  "fields": {
+    "action_time": "2023-04-02T10:44:17.654Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "2",
+    "object_repr": "кот",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 35,
+  "fields": {
+    "action_time": "2023-04-02T10:44:56.427Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "5",
+    "object_repr": "кот",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"\\u041b\\u043e\\u0433\\u043e\\u0442\\u0438\\u043f\", \"object\": \"uploads/\\u043a\\u043e\\u0442.png\"}}, {\"added\": {\"name\": \"\\u0424\\u043e\\u0442\\u043e\\u0433\\u0440\\u0430\\u0444\\u0438\\u044f \\u0433\\u0430\\u043b\\u0435\\u0440\\u0435\\u0438\", \"object\": \"uploads/seller.jpg\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 36,
+  "fields": {
+    "action_time": "2023-04-02T10:48:21.376Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "4",
+    "object_repr": "товар",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u041a\\u0430\\u0442\\u0435\\u0433\\u043e\\u0440\\u0438\\u0438\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 37,
+  "fields": {
+    "action_time": "2023-04-02T10:50:13.112Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "5",
+    "object_repr": "кот",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u041f\\u043e\\u043a\\u0430\\u0437\\u044b\\u0432\\u0430\\u0435\\u0442\\u0441\\u044f \\u043d\\u0430 \\u0433\\u043b\\u0430\\u0432\\u043d\\u043e\\u0439\"]}}]"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$cIDmOJVG3MtSPKy6lvkqx7$DLKpzVdyArwgPG0Tb/wWkO/WWgSFPQRQcNtgk7DhqII=",
+    "last_login": "2023-04-02T10:43:42.481Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2023-03-30T20:33:56.992Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "catalog.category",
+  "pk": 1,
+  "fields": {
+    "is_published": true,
+    "name": "Прикольные",
+    "slug": "class",
+    "weight": 100
+  }
+},
+{
+  "model": "catalog.category",
+  "pk": 2,
+  "fields": {
+    "is_published": true,
+    "name": "супер",
+    "slug": "super",
+    "weight": 100
+  }
+},
+{
+  "model": "catalog.tag",
+  "pk": 1,
+  "fields": {
+    "is_published": true,
+    "name": "для всех",
+    "slug": "all"
+  }
+},
+{
+  "model": "catalog.tag",
+  "pk": 2,
+  "fields": {
+    "is_published": true,
+    "name": "для меня",
+    "slug": "for_me"
+  }
+},
+{
+  "model": "catalog.tag",
+  "pk": 3,
+  "fields": {
+    "is_published": true,
+    "name": "для него",
+    "slug": "him"
+  }
+},
+{
+  "model": "catalog.tag",
+  "pk": 4,
+  "fields": {
+    "is_published": true,
+    "name": "для неё",
+    "slug": "her"
+  }
+},
+{
+  "model": "catalog.item",
+  "pk": 1,
+  "fields": {
+    "is_published": true,
+    "name": "апельсиновые роллы",
+    "category": 2,
+    "is_on_main": true,
+    "text": "Превосходно поесть вечером",
+    "tags": [
+      1,
+      2
+    ]
+  }
+},
+{
+  "model": "catalog.item",
+  "pk": 3,
+  "fields": {
+    "is_published": true,
+    "name": "неизвестный",
+    "category": 1,
+    "is_on_main": false,
+    "text": "Превосходно",
+    "tags": [
+      1
+    ]
+  }
+},
+{
+  "model": "catalog.item",
+  "pk": 4,
+  "fields": {
+    "is_published": true,
+    "name": "товар",
+    "category": 1,
+    "is_on_main": false,
+    "text": "роскошно",
+    "tags": [
+      1
+    ]
+  }
+},
+{
+  "model": "catalog.item",
+  "pk": 5,
+  "fields": {
+    "is_published": true,
+    "name": "кот",
+    "category": 1,
+    "is_on_main": true,
+    "text": "Превосходно чтобы почесать пузо",
+    "tags": [
+      1
+    ]
+  }
+},
+{
+  "model": "catalog.mainimage",
+  "pk": 2,
+  "fields": {
+    "upload": "uploads/sushi.webp",
+    "item": 1
+  }
+},
+{
+  "model": "catalog.mainimage",
+  "pk": 3,
+  "fields": {
+    "upload": "uploads/default.png",
+    "item": 3
+  }
+},
+{
+  "model": "catalog.mainimage",
+  "pk": 4,
+  "fields": {
+    "upload": "uploads/default_krpZ8gC.png",
+    "item": 4
+  }
+},
+{
+  "model": "catalog.mainimage",
+  "pk": 5,
+  "fields": {
+    "upload": "uploads/кот.png",
+    "item": 5
+  }
+},
+{
+  "model": "catalog.galleryimage",
+  "pk": 5,
+  "fields": {
+    "upload": "uploads/seller.jpg",
+    "item": 5
+  }
+}
+]
