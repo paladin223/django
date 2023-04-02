@@ -9,6 +9,7 @@ urlpatterns = [
     path("about/", include("about.urls"), name="about"),
     path("catalog/", include("catalog.urls"), name="catalog"),
     path("admin/", admin.site.urls, name="admin"),
+    path("feedback/", include("feedback.urls"), name="feedback"),
 ]
 
 if settings.DEBUG:

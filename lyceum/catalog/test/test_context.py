@@ -67,6 +67,11 @@ class ContextTests(TestCase):
             response.context,
             'В контексте присутствует лишний элемент "items"',
         )
+        self.assertNotIn(
+            "item",
+            response.context,
+            'В контексте присутствует лишний элемент "item"',
+        )
         self.assertIn(
             "show_category",
             response.context,
@@ -90,7 +95,7 @@ class ContextTests(TestCase):
         )
         self.assertIn(
             "item",
-            response.context,
+            response.context.values(),
             'В контексте присутствует лишний элемент "item"',
         )
         self.assertNotIn(
